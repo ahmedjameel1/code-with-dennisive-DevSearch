@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+{%block cj%}
+<!-- Main Section -->
+<main class="formPage my-xl">
+    <div class="content-box">
+        <div class="formWrapper">
+            <a class="backButton" href="{%url 'account'%}"><i class="im im-angle-left"></i></a>
+            <br>
+
+            <form class="form" method="POST">
+                {% csrf_token %}
+                <!-- Input:Text -->
+                {%for field in form%}
+                <div class="form__field">
+                    <label for="formInput#text">{{field.label}}: </label>
+                    {{field}}
+                </div>
+                {%endfor%}
+                <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+</main>
+{%if page == 'updateskill'%}
+<main class="formPage my-xl">
+    <div class="content-box">
+        <div class="formWrapper">
+            <a class="backButton" href="{%url 'account'%}"><i class="im im-angle-left"></i></a>
+            <br>
+
+            <form class="form" method="POST">
+                {% csrf_token %}
+                <!-- Input:Text -->
+                {%for field in form%}
+                <div class="form__field">
+                    <label for="formInput#text">{{field.label}}: </label>
+                    {{field}}
+                </div>
+                {%endfor%}
+                <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+</main>
+{%endif%}
+{%endblock%}
