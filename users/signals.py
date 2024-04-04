@@ -22,13 +22,13 @@ def createProfile(sender, instance ,created ,**kwargs):
         message = f'\n\n\nhave fun on our website , explore more here http://127.0.0.1:8000/projects/'.title()
         
         
-        send_mail(
-            subject,
-            message,
-            settings.EMAIL_HOST_USER,
-            [profile.email],
-            fail_silently= False,
-        )
+        # send_mail(
+        #     subject,
+        #     message,
+        #     settings.EMAIL_HOST_USER,
+        #     [profile.email],
+        #     fail_silently= False,
+        # )
         
     
 @receiver(post_delete, sender=Profile)
@@ -48,13 +48,13 @@ def messagenotifyGmail(sender , instance , **kwargs):
     message = f"hey {recipient.name} you have a new unread message! \n\n\nsubject: {instance.subject} \n\nMessage: {instance.body[1:15]}...\n\n\nPlease Login Here: 127.0.0.1:8000/inbox to View Your full unread Messages!".title()
         
         
-    send_mail(
-                subject,
-                message,
-                settings.EMAIL_HOST_USER,
-                [recipient.email],
-                fail_silently= False,
-                )
+    # send_mail(
+    #             subject,
+    #             message,
+    #             settings.EMAIL_HOST_USER,
+    #             [recipient.email],
+    #             fail_silently= False,
+    #             )
     
     
     
@@ -65,12 +65,12 @@ def reviewnotifyGmail(sender , instance , **kwargs):
     message = f"Review: {instance.body[1:15]}...\n\n Please Login Here: 127.0.0.1:8000/projects/project/{instance.project.id} To View The Full Feedback!"
         
         
-    send_mail(
-                subject,
-                message,
-                settings.EMAIL_HOST_USER,
-                [owner.email],
-                fail_silently= False,
-                )
+    # send_mail(
+    #             subject,
+    #             message,
+    #             settings.EMAIL_HOST_USER,
+    #             [owner.email],
+    #             fail_silently= False,
+    #             )
 #post_save.connect(profileupdated, sender=Profile)
 #post_delete.connect(profiledeleted, sender=Profile)
