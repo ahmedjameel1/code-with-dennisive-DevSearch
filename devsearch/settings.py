@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'devsearch.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5432/devsearch',
+        default='postgresql://devsearchuser:lE2yTUMIhH04gF0aMfN8y9vvN8spqa6U@dpg-co7eu3ev3ddc739568ig-a:5432/devsearch_whde',
         conn_max_age=600
     )
 }
